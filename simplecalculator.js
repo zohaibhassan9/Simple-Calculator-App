@@ -69,5 +69,6 @@ divBtn.addEventListener('click', () => getResults('division'));
 
 
 
+// The Second method for the simple calculator are given below 
 
-// 
+
