@@ -1,5 +1,6 @@
 const num1Input = document.getElementById('num1');
 const num2Input = document.getElementById('num2');
+const resultDisplay = document.getElementById('result')
 
 const  addBtn= document.getElementById('addBtn');
 const subBtn = document.getElementById('subBtn');
@@ -17,3 +18,56 @@ function getNumbers(){
     return{num1, num2}
     
     }
+
+
+
+
+// we have two methods that have same scenarios 
+
+
+
+
+// (i) The first one is given below
+
+
+function getResults(operation){
+const numbers = getNumbers();
+
+if(!numbers) return;
+
+const {num1, num2} = numbers;
+
+let result;
+
+switch(operation){
+
+    case 'add':
+    result = num1 + num2;
+    break;
+    case 'subtract':
+    result = num1 - num2;
+    break;
+    case 'multiply':
+    result = num1*num2;
+    break
+    case "division":
+    result = num2 !== 0 ? num1/num2: 'Division by 0 is not allowed.';
+    break;
+    default:
+    alert('Invalid operation')
+    return;
+
+}
+
+resultDisplay.textContent = result;
+}
+
+addBtn.addEventListener('click', () => getResults('add'));
+subBtn.addEventListener('click', () => getResults('subtract'));
+mulBtn.addEventListener('click', () => getResults('multiply'));
+divBtn.addEventListener('click', () => getResults('division'));
+
+
+
+
+// 
